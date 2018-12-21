@@ -46,6 +46,7 @@ export class HomePage {
         }).then((markerCluster) => {
           markerCluster.on(GoogleMapsEvent.MARKER_CLICK).subscribe((cluster) => {
             cluster[1].setTitle(cluster[1].get("name"));
+            cluster[1].showInfoWindow();
             cluster[1].on(GoogleMapsEvent.INFO_CLICK).subscribe((info) => {
               alert('Work');
             });
